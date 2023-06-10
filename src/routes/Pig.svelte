@@ -3,8 +3,8 @@
 	import { browser } from '$app/environment';
 
 	// stores
-	import mousepos from './mousePos';
-	import reducedMotion from './prefersReducedmotion'
+	import mousepos from '$lib/stores/mousePosition';
+	import reducedMotion from '$lib/stores/prefersReducedMotion'
 
 	// Pig Images
 	import pig from '$lib/images/pig.svg';
