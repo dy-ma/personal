@@ -6,7 +6,7 @@
 	import lefteye from '$lib/images/left-eye.svg';
 	import { browser } from '$app/environment';
 
-	let pigpos = {x:0, y:0};
+	let pigpos = { x: 0, y: 0 };
 	onMount(() => {
 		// update the position of the "Pig" div
 		// Do on mount since only needs to happen once
@@ -40,74 +40,58 @@
 	// calculate delta between cursor and pig
 	$: dx = $mousepos.x - pigpos.x;
 	$: dy = $mousepos.y - pigpos.y;
-    
-	// rerun updateCSS whenever mouse position changes
-	$: dx && dy && updateCSS();
 
 	// set max amount of eye movement in pixels
-    const max = 15;
-	function updateCSS() {
-		if (!browser) return; // don't run on server
-		// get elements from DOM
-		let left = document.getElementById('lefteye');
-		let right = document.getElementById('righteye');
-		if (left && right) { // wait for mount
-			// calculate desired eye translation
-            let osx = (dx / screen.width) * max;
-            let osy = (dy / screen.height) * max;
-			// set eye translation amount by setting css variables
-			left.style.setProperty('--offset-x', osx + 'px');
-			left.style.setProperty('--offset-y', osy + 'px');
-			right.style.setProperty('--offset-x', osx + 'px');
-			right.style.setProperty('--offset-y', osy + 'px');
-		}
-	}
+	const max = 15;
 
+	// calculate desired offset value, default to 0 on server
+	$: osx = browser ? (dx / screen.width) * max : 0;
+	$: osy = browser ? (dy / screen.height) * max : 0;
 </script>
 
 <div id="container">
-<div id="Pig">
-	<img src={pig} alt="pig" />
-	<img id="lefteye" src={lefteye} alt="pig eye" />
-	<img id="righteye" src={righteye} alt="pig eye" />
-</div>
+	<div id="Pig">
+		<img src={pig} alt="pig" />
+		<img id="lefteye" src={lefteye} alt="pig eye" style:transform="translate({osx}px, {osy}px)" />
+		<img id="righteye" src={righteye} alt="pig eye" 
+		style:transform="translate({osx}px, {osy}px)"/>
+	</div>
 </div>
 
 <style>
 	/* Wrap Pig in a container so pig can be absolute styled 
 	 * while overall pig element respects other elements
 	 */
-    #container {
-        position: relative;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+	#container {
+		position: relative;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
 
 	/* position absolute so eye position can be hardcoded */
 	#Pig {
 		width: fit-content;
 		position: absolute;
-        top: 0; /* Move to start of container */
+		top: 0; /* Move to start of container */
 	}
 
 	#lefteye,
 	#righteye {
 		position: inherit;
-		width: 5ch;
-		transform: translate(var(--offset-x), var(--offset-y));
+		width: 16%;
 	}
 
 	/* Set initial positioning to line up with eye socket */
 	#lefteye {
-		left: 7ch;
-		top: 7ch;
+		left: 23%;
+		top: 29%;
 	}
 
 	#righteye {
-		left: 16ch;
-		top: 7ch;
+		left: 54%;
+		top: 29%;
 	}
 
 	img {
