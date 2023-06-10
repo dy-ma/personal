@@ -3,7 +3,6 @@
 </script>
 
 <header>
-	<h1 class="center-text">Dylan Ang</h1>
 	<nav>
 		<ul>
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
@@ -24,9 +23,11 @@
 	header {
 		background-color: var(--color-theme-1);
 	}
+
 	ul {
 		display: flex;
 		flex-direction: row;
 		justify-content: space-around;
+		list-style-type: none;
 	}
 </style>
