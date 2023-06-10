@@ -38,7 +38,7 @@
 	$: dy = $position.y - $pigpos.y;
     
     const min = 0;
-    const max = 20;
+    const max = 15;
 
 	function updateCSS() {
 		if (!browser) return;
