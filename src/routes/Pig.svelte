@@ -1,10 +1,15 @@
 <script>
-	import mousepos from './positions';
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+
+	// stores
+	import mousepos from './mousePos';
+	import reducedMotion from './prefersReducedmotion'
+
+	// Pig Images
 	import pig from '$lib/images/pig.svg';
 	import righteye from '$lib/images/right-eye.svg';
 	import lefteye from '$lib/images/left-eye.svg';
-	import { browser } from '$app/environment';
 
 	let pigpos = { x: 0, y: 0 };
 	onMount(() => {
@@ -16,8 +21,8 @@
 				// get dimensional data of pig div
 				const { left, top, width, height } = pigDiv.getBoundingClientRect();
 				// store center of div
-				let x = left + width / 2;
-				let y = top + height / 2;
+				let x = left + (width / 2);
+				let y = top + (height / 2);
 				// update state variable
 				pigpos = { x, y };
 			}
@@ -44,9 +49,10 @@
 	// set max amount of eye movement in pixels
 	const max = 15;
 
-	// calculate desired offset value, default to 0 on server
-	$: osx = browser ? (dx / screen.width) * max : 0;
-	$: osy = browser ? (dy / screen.height) * max : 0;
+	// calculate desired offset value, 
+	// default to 0 on server or when user prefers reduced motion
+	$: osx = browser && !$reducedMotion ? (dx / screen.width) * max : 0;
+	$: osy = browser && !$reducedMotion ? (dy / screen.height) * max : 0;
 </script>
 
 <div id="container">
@@ -85,8 +91,8 @@
 
 	/* Set initial positioning to line up with eye socket */
 	#lefteye {
-		left: 23%;
-		top: 29%;
+		left: 25%;
+		top: 30%;
 	}
 
 	#righteye {

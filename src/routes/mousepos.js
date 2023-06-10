@@ -23,4 +23,3 @@ export default readable({x:0, y:0}, function start(set) {
         document.body.removeEventListener("mousemove", move)
     }
 })
-
