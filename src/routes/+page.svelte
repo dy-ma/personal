@@ -8,8 +8,8 @@
 </svelte:head>
 
 <div class="page">
-	<h1>Home</h1>
-	<Pig />
+	<h1>Hiya</h1>
+	<Pig/>
 </div>
 
 <style>
