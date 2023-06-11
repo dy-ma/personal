@@ -51,4 +51,10 @@
 		scale: 1.2;
 		transition: scale 0.1s ease-in-out;
 	}
+
+	button a {
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
 </style>
