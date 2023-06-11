@@ -21,5 +21,6 @@ alt="Power source of the website"
     }
     img {
         width: 50%;
+        border-radius: 10px;
     }
 </style>
