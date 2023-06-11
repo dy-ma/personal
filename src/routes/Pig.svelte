@@ -47,7 +47,7 @@
 	$: dy = $mousepos.y - pigpos.y;
 
 	// set max amount of eye movement in pixels
-	const max = 15;
+	const max = 25;
 
 	// calculate desired offset value, 
 	// default to 0 on server or when user prefers reduced motion
@@ -58,9 +58,9 @@
 <div id="container">
 	<div id="Pig">
 		<img src={pig} alt="pig" />
-		<img id="lefteye" src={lefteye} alt="pig eye" style:transform="translate({osx}px, {osy}px)" />
+		<img id="lefteye" src={lefteye} alt="pig eye" style:transform="translate({osx}%, {osy}%)" />
 		<img id="righteye" src={righteye} alt="pig eye" 
-		style:transform="translate({osx}px, {osy}px)"/>
+		style:transform="translate({osx}%, {osy}%)"/>
 	</div>
 </div>
 
@@ -80,7 +80,6 @@
 	#Pig {
 		width: fit-content;
 		position: absolute;
-		top: 0; /* Move to start of container */
 	}
 
 	#lefteye,
@@ -101,6 +100,6 @@
 	}
 
 	img {
-		width: 30ch;
+		width: 100%;
 	}
 </style>

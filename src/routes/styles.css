@@ -48,10 +48,6 @@ a {
 	text-decoration: none;
 }
 
-a:hover {
-	text-decoration: underline;
-}
-
 .center-text {
 	text-align: center;
 }
