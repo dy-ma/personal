@@ -7,53 +7,47 @@
 	<meta name="description" content="My Home Page" />
 </svelte:head>
 
-<h1 class="center-text">Hiya</h1>
 <div class="page">
-	<a href="/pig">
-		<div class="card">
-			<Pig />
-		</div>
-	</a>
-	<a href="/hamster">
-		<div class="card">
-			<img
-				src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6aff1732-42d3-4c71-ad9f-a03b35108ad4/dc6i64y-81219664-5a24-4374-9cce-40540a6c56d3.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzZhZmYxNzMyLTQyZDMtNGM3MS1hZDlmLWEwM2IzNTEwOGFkNFwvZGM2aTY0eS04MTIxOTY2NC01YTI0LTQzNzQtOWNjZS00MDU0MGE2YzU2ZDMuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.ZPm0Xaeds35SlCLpTa7_WwauXHadEaODyeOFXFBFmNs"
-				alt="Power source of the website"
-			/>
-		</div>
-	</a>
+	<div class="image">
+		<Pig></Pig>
+	</div>
+	<div class="description">
+		"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+	</div>
 </div>
 
 <style>
 	.page {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
-		justify-content: space-around;
+		width: 100%;
+		height: 100%;
+		display: grid;
+		grid-template-columns: 4fr 3fr;
+		max-width: 1920px;
 	}
 
-	.card {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		background-color: var(--color-theme-1);
-		width: 30ch;
-		height: 30ch;
-		border: 1px solid black;
-		border-radius: 8px;
-		overflow: hidden;
-		scale: 1;
-		transition: scale 0.1s ease-in-out;
+	.image {
+		background-color: var(--bg0);
+		display: grid;
+		place-items: center;
 	}
 
-	.card:hover {
-		scale: 1.05;
-		transition: scale 0.1s ease-in-out;
+	.description {
+		background-color: var(--bg0);
+		border-left: 1px solid var(--bg0-light);
+		display: grid;
+		place-items: center;
+		padding: 1rem;
+		text-align: justify;
 	}
 
-	@media (prefers-reduced-motion) {
-		.card:hover {
-			scale: 1;
+	@media only screen and (max-width: 600px) {
+		.page {
+			grid-template-columns: 1fr;
+		}
+
+		.description {
+			border-top: 1px solid var(--bg0-light);
+			border-left: none;
 		}
 	}
 </style>

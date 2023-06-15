@@ -4,7 +4,7 @@
 
 	// stores
 	import mousepos from '$lib/stores/mousePosition';
-	import reducedMotion from '$lib/stores/prefersReducedMotion'
+	import reducedMotion from '$lib/stores/prefersReducedMotion';
 
 	// Pig Images
 	import pig from '$lib/images/pig.svg';
@@ -21,8 +21,8 @@
 				// get dimensional data of pig div
 				const { left, top, width, height } = pigDiv.getBoundingClientRect();
 				// store center of div
-				let x = left + (width / 2);
-				let y = top + (height / 2);
+				let x = left + width / 2;
+				let y = top + height / 2;
 				// update state variable
 				pigpos = { x, y };
 			}
@@ -49,42 +49,28 @@
 	// set max amount of eye movement in pixels
 	const max = 25;
 
-	// calculate desired offset value, 
+	// calculate desired offset value,
 	// default to 0 on server or when user prefers reduced motion
 	$: osx = browser && !$reducedMotion ? (dx / screen.width) * max : 0;
 	$: osy = browser && !$reducedMotion ? (dy / screen.height) * max : 0;
 </script>
 
-<div id="container">
-	<div id="Pig">
-		<img src={pig} alt="pig" />
-		<img id="lefteye" src={lefteye} alt="pig eye" style:transform="translate({osx}%, {osy}%)" />
-		<img id="righteye" src={righteye} alt="pig eye" 
-		style:transform="translate({osx}%, {osy}%)"/>
-	</div>
+<div id="Pig">
+	<img src={pig} alt="pig" />
+	<img id="lefteye" src={lefteye} alt="pig eye" style:transform="translate({osx}%, {osy}%)" />
+	<img id="righteye" src={righteye} alt="pig eye" style:transform="translate({osx}%, {osy}%)" />
 </div>
 
 <style>
-	/* Wrap Pig in a container so pig can be absolute styled 
-	 * while overall pig element respects other elements
-	 */
-	#container {
-		position: relative;
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
 	/* position absolute so eye position can be hardcoded */
 	#Pig {
 		width: fit-content;
-		position: absolute;
+		position: relative;
 	}
 
 	#lefteye,
 	#righteye {
-		position: inherit;
+		position: absolute;
 		width: 16%;
 	}
 
