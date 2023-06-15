@@ -1,6 +1,6 @@
 <script>
 	import Pig from './Pig.svelte';
-	import './main.css'; // standard page styles
+	import './page.css'; // standard page styles
 </script>
 
 <svelte:head>

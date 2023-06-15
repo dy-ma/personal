@@ -11,7 +11,7 @@
 		const unsubscribe = page.subscribe((value) => {
 			const currentIndex = pages.indexOf(value.url.pathname);
 			next = currentIndex !== -1 && currentIndex < pages.length - 1 ? pages[currentIndex + 1] : '/';
-			prev = currentIndex !== -1 && currentIndex > 0 ? pages[currentIndex - 1] : '/';
+			prev = currentIndex !== -1 && currentIndex > 0 ? pages[currentIndex - 1] : pages.slice(-1);
 		});
 		return unsubscribe;
 	});
