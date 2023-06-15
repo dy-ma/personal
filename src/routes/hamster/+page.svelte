@@ -19,7 +19,7 @@
 		height: 100%;
 	}
 	img {
-		width: 50%;
+		width: clamp(10rem, 50%, 30rem);
 		border-radius: 10px;
 	}
 </style>
