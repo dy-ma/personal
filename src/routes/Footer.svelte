@@ -58,5 +58,11 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+        transition: 0.1s;
 	}
+
+    a:hover {
+        scale: 0.9;
+        transition: 0.1s;
+    }
 </style>
