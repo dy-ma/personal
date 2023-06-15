@@ -1,9 +1,8 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
-	import { afterUpdate } from 'svelte';
 
-	let pages = ['/', '/pig', '/hamster'];
+	let pages = ['/', '/hamster', '/pig'];
 	let next = '/';
 	let prev = '/';
 
