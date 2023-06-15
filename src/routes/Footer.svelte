@@ -2,7 +2,7 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 
-	let pages = ['/', '/hamster', '/pig'];
+	let pages = ['/', '/firebase', '/hamster'];
 	let next = '/';
 	let prev = '/';
 

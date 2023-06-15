@@ -14,14 +14,13 @@
 	</div>
 	<div class="description">
 		<div>
-		<h1>Hey, I'm Dylan</h1>
-		<p>
-			"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-			labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-			laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-			voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
-			non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-		</p>
+			<h1>Hey, I'm Dylan</h1>
+			<p>
+				I go to school at UC Davis, I'm majoring in Computer Science, and I'm graduating at the end of
+				2023.
+			</p>
+			<p>I like Web Development, Operating Systems, Concurrency, Computer Graphics, and Pigs, if it wasn't obvious.</p>
+			<p>Go ahead and hit those arrow buttons to see some projects of mine.</p>
 		</div>
 	</div>
 </div>

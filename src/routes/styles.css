@@ -18,6 +18,7 @@
 	--bg0-light: #fbf1c7;
 	--bg1-light: #ebdbb2;
 	--bg2-light: #d5c4a1;
+	--img-radius: 8px;
 	font-family: var(--font-body);
 	color: var(--color-text);
 }

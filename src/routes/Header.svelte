@@ -7,12 +7,7 @@
 		<ul>
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<button>
-				<a href="/">Home</a>
-				</button>
-			</li>
-			<li aria-current={$page.url.pathname === '/projects' ? 'page' : undefined}>
-				<button>
-				<a href="/projects">Projects</a>
+				<a href="/">Dylan Ang</a>
 				</button>
 			</li>
 			<li aria-current={$page.url.pathname.startsWith('/contacts') ? 'page' : undefined}>
@@ -34,7 +29,7 @@
 	ul {
 		display: flex;
 		flex-direction: row;
-		justify-content: space-around;
+		justify-content: space-between;
 		list-style-type: none;
 		padding-inline-start: 0;
 	}
@@ -51,7 +46,7 @@
 	}
 
 	button:hover {
-		scale: 1.2;
+		scale: 0.9;
 		transition: scale 0.1s ease-in-out;
 		filter: brightness(85%);
 	}
