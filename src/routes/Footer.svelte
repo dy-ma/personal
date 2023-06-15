@@ -1,6 +1,7 @@
 <script>
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
+	import { afterUpdate } from 'svelte';
 
 	let pages = ['/', '/pig', '/hamster'];
 	let next = '/';
@@ -17,12 +18,12 @@
 </script>
 
 <footer>
-	<div class="prev">
+	<button class="prev">
 		<a href={prev}> &#x2190 </a>
-	</div>
-	<div class="next">
+	</button>
+	<button class="next">
 		<a href={next}> &#x2192 </a>
-	</div>
+	</button>
 </footer>
 
 <style>
@@ -48,6 +49,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		border: none;
 	}
 
 	a {

@@ -2,10 +2,6 @@
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
 	import './styles.css';
-	import { page } from '$app/stores';
-
-	let cur = $page;
-	console.log(cur);
 </script>
 
 <div class="app">
