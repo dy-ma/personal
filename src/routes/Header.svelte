@@ -24,6 +24,7 @@
 		background-color: var(--bg0);
 		color: var(--bg0-light);
 		border-bottom: 1px solid var(--bg0-light);
+		max-height: fit-content;
 	}
 
 	ul {

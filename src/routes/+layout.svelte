@@ -18,7 +18,7 @@
 		min-height: 100vh;
 		width: 100vw;
 		display: grid;
-		grid-template-rows: auto 1fr auto;
+		grid-template-rows: 1fr 10fr 2fr;
 		background-color: var(--bg0);
 		color: var(--bg0-light);
 	}

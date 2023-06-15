@@ -28,7 +28,7 @@
 <style>
 	footer {
 		border: 1px solid black;
-		height: 15vh;
+		/* height: 15vh; */
 		display: grid;
 		grid-template-columns: repeat(12, 1fr);
 	}
