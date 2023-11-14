@@ -1,18 +1,19 @@
 <script>
 	import { page } from '$app/stores';
-	import { onMount } from 'svelte';
+	import { afterUpdate } from 'svelte';
 
-	let pages = ['/', '/firebase', '/hamster'];
+	let pages = ['/', '/editor', '/firebase', '/hamster'];
+
+	let current = pages.indexOf($page.url.pathname);
 	let next = '/';
 	let prev = '/';
 
-	onMount(() => {
-		const unsubscribe = page.subscribe((value) => {
-			const currentIndex = pages.indexOf(value.url.pathname);
-			next = currentIndex !== -1 && currentIndex < pages.length - 1 ? pages[currentIndex + 1] : '/';
-			prev = currentIndex !== -1 && currentIndex > 0 ? pages[currentIndex - 1] : pages.slice(-1);
-		});
-		return unsubscribe;
+	// Update next and prev pages on each reload
+	// onMount won't work because the Footer element is only mounted once
+	afterUpdate(() => {
+		current = pages.indexOf($page.url.pathname);
+		next = (current < pages.length - 1) ? pages[current + 1] : pages[0];
+		prev = (current > 0) ? pages[current - 1] : pages[pages.length - 1];
 	});
 </script>
 
@@ -57,11 +58,11 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-        transition: 0.1s;
+		transition: 0.1s;
 	}
 
-    a:hover {
-        scale: 0.9;
-        transition: 0.1s;
-    }
+	a:hover {
+		scale: 0.9;
+		transition: 0.1s;
+	}
 </style>
