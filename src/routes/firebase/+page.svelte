@@ -24,6 +24,7 @@
 	.image {
 		display: grid;
 		place-items: center;
+		padding: 10px 0px;
 	}
 
 	.description {
