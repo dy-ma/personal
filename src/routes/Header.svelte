@@ -4,18 +4,8 @@
 
 <header>
 	<nav>
-		<ul>
-			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<button>
-				<a href="/">Dylan Ang</a>
-				</button>
-			</li>
-			<li aria-current={$page.url.pathname.startsWith('/contacts') ? 'page' : undefined}>
-				<button>
-				<a href="/contacts">Contacts</a>
-				</button>
-			</li>
-		</ul>
+		<a href="/">Dylan Ang</a>
+		<a href="/contacts">Contacts</a>
 	</nav>
 </header>
 
@@ -27,35 +17,25 @@
 		max-height: fit-content;
 	}
 
-	ul {
+	nav {
+		width: 100%;
+		height: 100%;
 		display: flex;
 		flex-direction: row;
+		align-items: center;
 		justify-content: space-between;
-		list-style-type: none;
-		padding-inline-start: 0;
+		padding: 0px 25px;
 	}
 
-	button {
+	a {
 		color: inherit;
-		min-width: 12ch;
-		background-color: transparent;
-		border: none;
-		border-radius: 4px;
-		padding: 5px;
 		scale: 1;
 		transition: scale 0.1s ease-in-out;
 	}
 
-	button:hover {
+	a:hover {
 		scale: 0.9;
 		transition: scale 0.1s ease-in-out;
 		filter: brightness(85%);
-	}
-
-	button a {
-		display: block;
-		width: 100%;
-		height: 100%;
-		color: inherit;
 	}
 </style>
