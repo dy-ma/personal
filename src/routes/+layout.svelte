@@ -23,6 +23,12 @@
 		color: var(--bg0-light);
 	}
 
+	@media screen and (max-width: 480px) {
+		.app {
+			grid-template-rows: 1fr 10fr 1fr;
+		}
+	}
+
 	main {
 		border-bottom: 1px solid var(--bg0-light);
 	}

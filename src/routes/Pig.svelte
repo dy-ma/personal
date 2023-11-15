@@ -11,6 +11,9 @@
 	import righteye from '$lib/images/right-eye.svg';
 	import lefteye from '$lib/images/left-eye.svg';
 
+	let innerWidth = 0;
+	let innerHeight = 0;
+
 	let pigpos = { x: 0, y: 0 };
 	onMount(() => {
 		// update the position of the "Pig" div
@@ -62,7 +65,6 @@
 </div>
 
 <style>
-	/* position absolute so eye position can be hardcoded */
 	#Pig {
 		width: fit-content;
 		position: relative;
