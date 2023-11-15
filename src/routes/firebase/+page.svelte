@@ -12,10 +12,10 @@
 	<div class="description">
 		<div>
 			<h1>Live Syncing Notes</h1>
-			<p>As an Mac + Android user, I hated not having my notes synced across all of my devices. So I built my own! TinyNote is a web based notes app that syncs your notes across all devices.</p>
+			<p>As an Mac + Android user, I hated not having my notes synced across all of my devices. So I built my own! Live Notes is a web based notes app that syncs your notes across all devices.</p>
 			<p>TinyNote supports google authentication through firebase. The backend is using firestore for real-time updates.</p>
 			<p>Using a web timer, the app only writes to the database when the user clicks off the page or stops writing for 2 seconds. This prevents unnecessary rewrites and extra write costs.</p>
-			<p>View Source on <a class="gh-link" href="https://github.com/dy-ma/firebase-notes" target="_blank">Github</a></p>
+			<p>View Source on <a class="link" href="https://github.com/dy-ma/firebase-notes" target="_blank">Github</a></p>
 		</div>
 	</div>
 </div>
@@ -49,7 +49,7 @@
 		transition: 0.1s ease;
 	}
 
-	.gh-link {
+	.link {
 		text-decoration: underline;
 	}
 </style>
