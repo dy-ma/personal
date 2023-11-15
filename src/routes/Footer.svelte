@@ -34,6 +34,18 @@
 		grid-template-columns: repeat(12, 1fr);
 	}
 
+	@media only screen and (max-width: 480px) {
+		footer {
+			display: flex;
+		}
+		.prev{
+			width: 100%;
+		}
+		.next {
+			width: 100%
+		}
+	}
+
 	.prev {
 		grid-column: 9 / span 2;
 		background-color: var(--orange);
@@ -50,6 +62,7 @@
 		justify-content: center;
 		align-items: center;
 		border: none;
+		color: var(--bg0);
 	}
 
 	a {
