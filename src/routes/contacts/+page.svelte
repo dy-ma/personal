@@ -6,7 +6,7 @@
 <script>
 	let links = [
 		{name: "Github", url: "https://github.com/dy-ma"},
-		{name: "Resume", url: "https://drive.google.com/file/d/1QiVU7EMkzTwO-iE7Vq6Mc8MlOxIw5fmG/view?usp=drive_link"},
+		{name: "Resume", url: "https://drive.google.com/file/d/1vSSxwpA29HPdRq2Qdu4pSG2gxL6uoHNi/view?usp=sharing"},
 		{name: "LinkedIn", url: "https://www.linkedin.com/in/dylan-mou-ang/"},
 		{name: "Email", url: "mailto:dylanmouang@gmail.com"}
 ]
