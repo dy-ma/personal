@@ -15,7 +15,7 @@
 	<div class="description">
 		<div>
 			<h1>Hey, I'm Dylan</h1>
-			<p>I'm a computer science graduate looking for junior software engineering roles.</p>
+			<p>I'm a computer science graduate (UC Davis) looking for junior software engineering roles.</p>
 			<p>I'm interested in backend web development and software architecture.</p>
 			<p>Hit the arrow buttons below to see some projects of mine.</p>
 		</div>
