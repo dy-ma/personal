@@ -1,5 +1,5 @@
 <script>
-	import '../page.css'
+	import '$lib/styles/page.css'
 	import firenote from '$lib/images/firebase.png'
 </script>
 

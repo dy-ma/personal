@@ -1,20 +1,8 @@
 <script>
 	import { page } from '$app/stores';
-	import { afterUpdate } from 'svelte';
-
-	let pages = ['/', '/editor', '/firebase', '/hamster'];
-
-	let current = pages.indexOf($page.url.pathname);
-	let next = '/';
-	let prev = '/';
-
-	// Update next and prev pages on each reload
-	// onMount won't work because the Footer element is only mounted once
-	afterUpdate(() => {
-		current = pages.indexOf($page.url.pathname);
-		next = (current < pages.length - 1) ? pages[current + 1] : pages[0];
-		prev = (current > 0) ? pages[current - 1] : pages[pages.length - 1];
-	});
+	// Load pages from each routes +page.js or fallback
+	$: next = $page.data.next || '/'
+	$: prev = $page.data.prev || '/'
 </script>
 
 <footer>

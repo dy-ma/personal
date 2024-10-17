@@ -1,5 +1,5 @@
 <script>
-	import '../page.css'
+	import '$lib/styles/page.css'
 	import editor from '$lib/images/ai-editor.png'
 </script>
 

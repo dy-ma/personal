@@ -1,5 +1,12 @@
 // since there's no dynamic data here, we can prerender
 // it so that it gets served as a static asset in production
-export const prerender = false;
-export const csr = true;
-export const ssr = true;
+export const prerender = true;
+// export const csr = true;
+// export const ssr = true;
+
+export const load = () => {
+    return {
+        next: '/arduino',
+        prev: '/hamster'
+    }
+}
