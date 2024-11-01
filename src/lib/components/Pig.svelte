@@ -11,10 +11,7 @@
 	import righteye from '$lib/images/right-eye.svg';
 	import lefteye from '$lib/images/left-eye.svg';
 
-	let innerWidth = 0;
-	let innerHeight = 0;
-
-	let pigpos = { x: 0, y: 0 };
+	let pigpos = $state({ x: 0, y: 0 });
 	onMount(() => {
 		// update the position of the "Pig" div
 		// Do on mount since only needs to happen once
@@ -46,16 +43,16 @@
 	});
 
 	// calculate delta between cursor and pig
-	$: dx = $mousepos.x - pigpos.x;
-	$: dy = $mousepos.y - pigpos.y;
+	let dx = $derived($mousepos.x - pigpos.x);
+	let dy = $derived($mousepos.y - pigpos.y);
 
 	// set max amount of eye movement in pixels
 	const max = 25;
 
 	// calculate desired offset value,
 	// default to 0 on server or when user prefers reduced motion
-	$: osx = browser && !$reducedMotion ? (dx / screen.width) * max : 0;
-	$: osy = browser && !$reducedMotion ? (dy / screen.height) * max : 0;
+	let osx = $derived(browser && !$reducedMotion ? (dx / screen.width) * max : 0);
+	let osy = $derived(browser && !$reducedMotion ? (dy / screen.height) * max : 0);
 </script>
 
 <div id="Pig">

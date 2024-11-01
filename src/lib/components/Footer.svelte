@@ -1,8 +1,8 @@
 <script>
 	import { page } from '$app/stores';
 	// Load pages from each routes +page.js or fallback
-	$: next = $page.data.next || '/'
-	$: prev = $page.data.prev || '/'
+	let next = $derived($page.data.next || '/')
+	let prev = $derived($page.data.prev || '/')
 </script>
 
 <footer>
