@@ -11,6 +11,7 @@
 		color: var(--bg0-light);
 		border-bottom: 1px solid var(--bg0-light);
 		max-height: fit-content;
+		view-transition-name: header;
 	}
 
 	nav {

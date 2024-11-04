@@ -1,6 +1,7 @@
 <script>
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import { onNavigate } from '$app/navigation';
 	import '$lib/styles/styles.css';
 	/**
 	 * @typedef {Object} Props
@@ -9,6 +10,18 @@
 
 	/** @type {Props} */
 	let { children } = $props();
+
+	// Enable view transitions
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 </script>
 
 <div class="app">

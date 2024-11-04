@@ -1,69 +1,51 @@
 <script>
 	import { page } from '$app/stores';
+	import { ArrowLeft, ArrowRight } from 'lucide-svelte';
 	// Load pages from each routes +page.js or fallback
-	let next = $derived($page.data.next || '/')
-	let prev = $derived($page.data.prev || '/')
+	let next = $derived($page.data.next || '/');
+	let prev = $derived($page.data.prev || '/');
 </script>
 
 <footer>
-	<button class="prev">
-		<a href={prev}> &#x2190 </a>
-	</button>
-	<button class="next">
-		<a href={next}> &#x2192 </a>
-	</button>
-</footer>
-
-<style>
+	<a href={prev} class="prev"> <ArrowLeft size={32}/> </a>
+	<a href={next} class="next"> <ArrowRight size={32}/> </a>
+  </footer>
+  
+  <style>
 	footer {
-		border: 1px solid black;
-		/* height: 15vh; */
-		display: grid;
-		grid-template-columns: repeat(12, 1fr);
+	  display: grid;
+	  grid-template-columns: repeat(12, 1fr);
+	  view-transition-name: footer;
 	}
-
+  
 	@media only screen and (max-width: 480px) {
-		footer {
-			display: flex;
-		}
-		.prev{
-			width: 100%;
-		}
-		.next {
-			width: 100%
-		}
+	  footer {
+		display: flex;
+	  }
+	  .prev, .next {
+		width: 100%;
+	  }
 	}
 
 	.prev {
-		grid-column: 9 / span 2;
-		background-color: var(--orange);
+	  grid-column: 9 / span 2;
+	  background-color: var(--orange);
 	}
 	.next {
-		grid-column: 11 / span 2;
-		background-color: var(--aqua);
+	  grid-column: 11 / span 2;
+	  background-color: var(--aqua);
 	}
-	.prev,
-	.next {
-		font-size: 5vh;
-		font-weight: 800;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		border: none;
-		color: var(--bg0);
+	.prev, .next {
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  color: var(--bg0);
+	  text-decoration: none; /* Remove underline from links */
+	  transition: background-color 0.2s ease; /* Smooth background color transition */
 	}
 
-	a {
-		width: 100%;
-		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		transition: 0.1s;
+	a:hover, a:focus {
+		filter: brightness(0.8);
+		transition: 0.2s;
 	}
-
-	a:hover {
-		scale: 0.9;
-		transition: 0.1s;
-	}
-</style>
+  </style>
