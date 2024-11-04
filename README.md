@@ -2,4 +2,4 @@
 
 ![](landing.png)
 
-This is my personal website, built in SvelteKit and deployed with Vercel.
+This is my personal website, built in SvelteKit and deployed on Cloudflare Pages.
