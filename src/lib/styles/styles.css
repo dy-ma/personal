@@ -25,6 +25,8 @@
 
 html {
 	box-sizing: border-box;
+	/* Set the background color on root so that overflow scrolling doesnt have whitespace */
+	background-color: var(--bg0);
 }
 
 *,
